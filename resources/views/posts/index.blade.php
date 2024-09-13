@@ -5,6 +5,9 @@
             <li>
                 <h2>Title: {{ $post->title }}</h2>
                 <p>Content: {{ $post->content }}</p>
+                <div>
+                    <a href="{{ route('posts.show', $post) }}">Show</a>
+                </div>
             </li>
         @endforeach
     </ul>

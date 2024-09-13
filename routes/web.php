@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostController::class);
+Route::post('posts/{post}/addcomment', [PostController::class, 'addComment'])->name('posts.addcomment');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

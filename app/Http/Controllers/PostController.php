@@ -72,4 +72,10 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('posts.index');
     }
+    
+    public function addComment(Request $request, Post $post) {
+        $post->comments()->create($request->all());
+
+        return redirect()->route('posts.show', $post);
+    }
 }

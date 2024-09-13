@@ -43,13 +43,13 @@ class PostController extends Controller
     {
         return view('posts.show', ['post' => $post]);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -57,7 +57,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = 1;
+        $post->update($data);
+
+        return redirect()->route('posts.index');
     }
 
     /**

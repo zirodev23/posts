@@ -7,6 +7,7 @@
                 <p>Content: {{ $post->content }}</p>
                 <div>
                     <a href="{{ route('posts.show', $post) }}">Show</a>
+                    <a href="{{ route('posts.edit', $post) }}">Edit</a>
                 </div>
             </li>
         @endforeach

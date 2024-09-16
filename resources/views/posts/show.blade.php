@@ -4,7 +4,7 @@
 
     <h1>Comment list:</h1>
     <ul>
-        @foreach($post->comments() as $comment)
+        @foreach($post->comments as $comment)
             <p>{{ $comment->content }}</p>
         @endforeach
     </ul>
